@@ -4,7 +4,7 @@
 @section('content')
 
         
-<h2> Still homepage</h2>
+<h2> Still homepage but doing Git practise now</h2>
 
         
 @endsection
