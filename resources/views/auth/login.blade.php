@@ -44,7 +44,7 @@
                 </div>
 
                 <div>
-                <button type="submit" class="btn btn-primary mt-3 "> Login </button>
+                <button type="submit" class="form-control btn btn-primary mt-3 "> Login </button>
                 </div>
             
             

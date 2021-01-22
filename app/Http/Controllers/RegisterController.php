@@ -17,7 +17,8 @@ class RegisterController extends Controller
 
         $this->validate($request, [
 
-            'name' => 'required| max: 20',
+            'name' => 'required| max: 255',
+            'username' => 'required|unique:users',
             'email'=>'required|email|unique:users', //unique to the users table. If column name/key is different change the key after users after comma eg unique:users, user_email
             'password'=> 'required|confirmed',
             
@@ -26,6 +27,7 @@ class RegisterController extends Controller
         User::create([
 
             'name'=>$request->name,
+            'username'=>$request->username,
             'email'=>$request->email,
             'password'=>Hash::make($request->password),
         ]);

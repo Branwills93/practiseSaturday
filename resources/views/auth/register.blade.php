@@ -36,6 +36,21 @@
         </div>
 
         <div>
+            <label for="username">Username</label>
+        </div>
+        <div>
+            <input class="form-control @error('username') border-danger  @enderror" type="text"
+             name="username" id="" placeholder="Your username" value="{{old('username')}}" autocomplete="off" >
+
+            @error('username')
+                <div class= "text-danger">
+                    {{$message}}
+                </div>
+            @enderror
+
+        </div>
+
+        <div>
             <label for="password">Password</label>
         </div>
         <div>
@@ -58,8 +73,8 @@
                 </div>
             @enderror
         </div>
-        <div>
-                <button type="submit" class="btn btn-primary mt-2">Register </button>
+        <div class="pt-3">
+                <button type="submit" class="form-control btn btn-primary mt-2">Register </button>
         </div>
 
     </div>    
