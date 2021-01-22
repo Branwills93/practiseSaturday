@@ -22,6 +22,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('dashboard')}}">Dashboard</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('posts')}}">Posts</a>
+                        </li>
                        
                      </ul>
                      <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end">
@@ -34,7 +37,7 @@
                             
                             <form action="{{route('logout')}}">
                                 @csrf
-                                    <button class="nav-link" type="submit">Logout</button>
+                                    <button class="nav-link border-light" type="submit">Logout</button>
 
                             
                             </form>
