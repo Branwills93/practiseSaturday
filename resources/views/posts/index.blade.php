@@ -4,7 +4,7 @@
 @section('content')
 
 
-<div class="container col-lg-6 bg-light">
+<div class="container col-lg-6 bg-light mt-3">
     <div class="row pt-5">
         @guest
 
@@ -40,7 +40,23 @@
         </form>
         @endauth
         <div>
-            Post Index
+            @if($posts->count())
+                @foreach($posts as $post)
+                    <div class="mb-4">
+                        <div>
+                            <a href="#" class="fw-bold text-dark">{{ $post->user->name }}</a><span class="fs-6 fw-lighter">
+                             {{$post->created_at->diffForHumans()}}</span>   
+                            <p class="mb-2">{{ $post->body}}</p>
+
+                            <a href="" class="font-primary">Delete</a>
+                        </div>
+                    </div>
+                @endforeach
+                {{$posts->links()}}
+            @else
+                <p>There are no posts</p>
+            @endif
+           
         </div>
     </div>
 </div>
