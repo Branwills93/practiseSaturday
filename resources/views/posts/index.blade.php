@@ -47,8 +47,15 @@
                             <a href="#" class="fw-bold text-dark">{{ $post->user->name }}</a><span class="fs-6 fw-lighter">
                              {{$post->created_at->diffForHumans()}}</span>   
                             <p class="mb-2">{{ $post->body}}</p>
-
-                            <a href="" class="font-primary">Delete</a>
+                                @if($post->ownedBy(auth()->user()))
+                                    <form action="{{route('posts.destroy', $post->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-link">Delete</button>
+                                    
+                                    </form>
+                                    
+                                @endif
                         </div>
                     </div>
                 @endforeach
