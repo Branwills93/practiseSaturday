@@ -15,10 +15,10 @@ class Post extends Model
     ];
 
 
-    public function ownedBy(User $user){
+    // public function ownedBy(User $user){
 
-        return $user->id === $this->user_id;
-    }
+    //     return $user->id === $this->user_id;
+    // }
     public function user(){
 
 

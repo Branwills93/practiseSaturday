@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Auth\Access\AuthorizationException;
 
 class PostController extends Controller
 {
@@ -34,8 +35,9 @@ class PostController extends Controller
            return back();
     }
 
-    public function destroy(Post $post){
+    public function destroy(Request $request, Post $post){
 
+        $this->authorize('delete', $post);  // throws exception
         $post->delete();
 
         return back();
